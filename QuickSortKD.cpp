@@ -107,12 +107,7 @@ vector<vector<double> > randomData(int size_of_data, int dimension) {
   vector<vector<double> > v(size_of_data, vector<double>(dimension, 1));
   for (int i = 0; i < v.size(); ++i) {
     for (int j = 0; j < v[i].size(); ++j) {
-      int sign = (rand()%2);
-      if (sign) {
-        v[i][j] = (double)((rand()%1000000)/(double)1000);
-      } else {
-        v[i][j] = -(double)((rand()%1000000)/(double)1000);
-      }
+      v[i][j] = (double)((rand()%1000000)/(double)1000);
     }
   }
   return v;

@@ -7,6 +7,11 @@
 #include <math.h>
 #include "Read.cpp"
 // #include "Variance.cpp"
+
+#include <boost/asio/io_service.hpp>
+#include <boost/bind.hpp>
+#include <boost/thread/thread.hpp>
+
 using namespace std;
 
 class Node {
@@ -27,6 +32,8 @@ struct Parameters{
   int end;
   int dimension;
 };
+
+
 
 void printData(const vector<vector<double> >& data) {
   cout << endl;
@@ -62,7 +69,6 @@ void prepareTreeHelper(vector<vector<double> >& data, int begin, int end, int di
 }
 
 void prepareTree(vector<vector<double> >& data) {
-  // preProcess(data);
   for (int i = 0; i < data.size(); ++i) {
     data[i].push_back(0);
   }
@@ -157,4 +163,9 @@ void query(const vector<vector<double> >& data, Node* current, const vector<doub
     }
   }
   return;
+}
+
+int main(int argc, char const *argv[]) {
+
+  return 0;
 }
